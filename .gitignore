@@ -1,5 +1,7 @@
+**.json
+**make_output
 .cache
 .obj
-**.json
-make_output
-
+ex00/templates
+ex01/iter
+ex02/array
