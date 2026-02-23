@@ -1,0 +1,5 @@
+.cache
+.obj
+**.json
+make_output
+
