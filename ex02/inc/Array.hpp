@@ -32,16 +32,16 @@ public:
 };
 
 template <typename T>
-Array<T>::Array() : _size(0), _content(new T[0]) {}
+Array<T>::Array() : _size(0), _content(new T[0]()) {}
 
 template <typename T>
-Array<T>::Array(unsigned int n) : _size(n), _content(new T[n]) {}
+Array<T>::Array(unsigned int n) : _size(n), _content(new T[n]()) {}
 
 template <typename T>
 Array<T>::Array(Array &other)
 {
 	this->_size = other._size;
-	this->_content = new T[this->_size];
+	this->_content = new T[this->_size]();
 	for (size_t i = 0; i < this->_size; ++i)
 		this->_content[i] = other._content[i];
 }
@@ -57,7 +57,7 @@ Array<T> &Array<T>::operator=(Array &other)
 {
 	delete this->_content;
 	this->_size = other._size;
-	this->_content = new T[this->_size];
+	this->_content = new T[this->_size]();
 	for (size_t i = 0; i < this->_size; ++i)
 		this->_content[i] = other._content[i];
 }
