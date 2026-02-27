@@ -13,7 +13,10 @@
 #include <iostream>
 #include "Array.hpp"
 
-#define MAX_VAL 7
+#ifndef MAX_VAL
+# define MAX_VAL 100
+#endif
+
 int main(int, char**)
 {
     Array<int> numbers(MAX_VAL);
@@ -67,5 +70,8 @@ int main(int, char**)
     }
 
     delete [] mirror;
+    Array<int> n(MAX_VAL);
+    for (int i = 0; i < MAX_VAL; ++i)
+        std::cout << n[i] << std::endl;
     return 0;
 }
