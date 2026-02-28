@@ -13,36 +13,24 @@
 #include <iostream>
 #include "basic_ops.hpp"
 
-# define INT_A 3
-# define INT_B 4
-
-# define FLOAT_A 4.2f
-# define FLOAT_B 19385.332f
-
-# define STR_A "cake"
-# define STR_B "apple"
-
 # define USAGE "usage : ./basic_ops [<param1> <param2>]"
 
-int main(int argc, char **argv)
-{
-    if (argc < 2)
-    {
-        std::cout << "INT TESTING" << std::endl;
-        test<int>(INT_A, INT_B);
-        std::cout << "FLOAT TESTING" << std::endl;
-        test<float>(FLOAT_A, FLOAT_B);
-        std::cout << "STR TESTING" << std::endl;
-        test(STR_A, STR_B); // no type specifier here; c++ is smart
-    }
-    else if (argc > 3)
-    {
-        std::cerr << USAGE << std::endl;
-        for (int i = 0; i < argc; ++i)
-        {
-            (void)argc;
-            (void)argv;
-            // test(argv[1], argv[2]);
-        }
-    }
+
+
+int main( void ) {
+int a = 2;
+int b = 3;
+std::cout << "a = " << a << ", b = " << b << std::endl;
+::swap(a,b );
+std::cout << "a = " << a << ", b = " << b << std::endl;
+std::cout << "min(a, b) = " << ::min(a,b) << std::endl;
+std::cout << "max(a, b) = " << ::max(a,b) << std::endl;
+std::string c = "chaine1";
+std::string d = "chaine2";
+std::cout << "c = " << c << ", d = " << d << std::endl;
+::swap(c, d);
+std::cout << "c = " << c << ", d = " << d << std::endl;
+std::cout << "min(c,d) = " << ::min(c,d) << std::endl;
+std::cout << "max(c,d) = " << ::max(c,d) << std::endl;
+return 0;
 }
