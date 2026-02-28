@@ -11,16 +11,18 @@
 /* ************************************************************************** */
 
 #ifndef ITER_HPP
-#define ITER_HPP
+# define ITER_HPP
 
-#include <stddef.h>
-#include <iostream>
+# include <stddef.h>
+# include <iostream>
 
 template <typename T, typename F> void iter(T *arr, const size_t size, F f)
 {
 	for (size_t i = 0; i < size; ++i)
-		f(&arr[i]);
+		f(arr[i]);
 }
+
+// Used for verification
 
 template <typename T> void printArr(T *arr, const size_t size)
 {
@@ -35,4 +37,15 @@ template <typename T> void printArr(T *arr, const size_t size)
 	  		std::cout << "]" << std::endl;
 	}
 }
-# endif
+
+template <typename T> void printVar(const T var)
+{
+	std::cout << var << std::endl;
+}
+
+template <typename T> void increment(T &var)
+{
+	++var;
+}
+
+#endif

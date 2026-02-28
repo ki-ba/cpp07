@@ -14,28 +14,27 @@
 #include <iostream>
 
 #define ARR_SIZE 10
-void addOne(int *n)
-{
-	static int i = 0;
-	*n = i++;
-}
-
-void constAddOne(const int *n)
-{
-	std::cout << "constAddOne called on " << *n << std::endl;
-}
 
 int main(void)
 {
 	int arr[ARR_SIZE] = {0};
 	int const const_arr[ARR_SIZE] = {0};
+
+
+	std::cout << std::endl << "NON CONST ARRAY, NON CONST FUNCTION" << std::endl;
+
 	printArr(arr, ARR_SIZE);
-	iter(arr, ARR_SIZE, addOne);
+	iter(arr, ARR_SIZE, increment<int>);
 	printArr(arr, ARR_SIZE);
 
-	// CONST ARRAY
+	std::cout << std::endl << "NON CONST ARRAY, CONST FUNCTION" << std::endl;
+	printArr(arr, ARR_SIZE);
+	iter(arr, ARR_SIZE, printVar<int>);
+	printArr(arr, ARR_SIZE);
 
+	std::cout << std::endl << "CONST ARRAY, CONST FUNCTION" << std::endl;
 	printArr(const_arr, ARR_SIZE);
-	iter(const_arr, ARR_SIZE, constAddOne);
+	iter(const_arr, ARR_SIZE, printVar<int>);
 	printArr(const_arr, ARR_SIZE);
+
 }
