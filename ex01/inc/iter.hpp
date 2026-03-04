@@ -22,8 +22,6 @@ template <typename T, typename F> void iter(T *arr, const size_t size, F f)
 		f(arr[i]);
 }
 
-// Used for verification
-
 template <typename T> void printArr(T *arr, const size_t size)
 {
 	for (size_t i = 0; i < size; ++i)
@@ -38,7 +36,7 @@ template <typename T> void printArr(T *arr, const size_t size)
 	}
 }
 
-template <typename T> void printVar(const T var)
+template <typename T> void printVar(const T &var)
 {
 	std::cout << var << std::endl;
 }
