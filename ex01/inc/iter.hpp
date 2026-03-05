@@ -16,12 +16,19 @@
 # include <stddef.h>
 # include <iostream>
 
-template <typename T, typename F> void iter(T *arr, const size_t size, F f)
+template <typename T> void iter(T *arr, const size_t size, void (*f)(T &))
 {
 	for (size_t i = 0; i < size; ++i)
 		f(arr[i]);
 }
 
+template <typename T> void iter(const T *arr, const size_t size, void (*f)(const T &))
+{
+	for (size_t i = 0; i < size; ++i)
+		f(arr[i]);
+}
+
+// Helper functions for testing
 template <typename T> void printArr(T *arr, const size_t size)
 {
 	for (size_t i = 0; i < size; ++i)

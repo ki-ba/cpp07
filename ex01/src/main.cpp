@@ -24,17 +24,17 @@ int main(void)
 	std::cout << std::endl << "NON CONST ARRAY, NON CONST FUNCTION" << std::endl;
 
 	printArr(arr, ARR_SIZE);
-	iter(arr, ARR_SIZE, increment<int>);
+	iter(arr, ARR_SIZE, increment);
 	printArr(arr, ARR_SIZE);
 
 	std::cout << std::endl << "NON CONST ARRAY, CONST FUNCTION" << std::endl;
 	printArr(arr, ARR_SIZE);
-	iter(arr, ARR_SIZE, printVar<int>);
+	iter(arr, ARR_SIZE, printVar);
 	printArr(arr, ARR_SIZE);
 
 	std::cout << std::endl << "CONST ARRAY, CONST FUNCTION" << std::endl;
 	printArr(const_arr, ARR_SIZE);
-	iter(const_arr, ARR_SIZE, printVar<int>);
+	iter(const_arr, ARR_SIZE, printVar);
 	printArr(const_arr, ARR_SIZE);
 
 }
