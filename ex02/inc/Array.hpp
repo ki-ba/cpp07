@@ -55,11 +55,14 @@ Array<T>::~Array()
 template <typename T>
 Array<T> &Array<T>::operator=(Array &other)
 {
+	if (this == &other)
+		return (*this);
 	delete this->_content;
 	this->_size = other._size;
 	this->_content = new T[this->_size]();
 	for (size_t i = 0; i < this->_size; ++i)
 		this->_content[i] = other._content[i];
+	return (*this);
 }
 template <typename T>
 unsigned int Array<T>::size() const
